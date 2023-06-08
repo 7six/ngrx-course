@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
     const val = this.form.value;
 
-    this.auth.login(val.login, val.password).pipe(
+    this.auth.login(val.email, val.password).pipe(
       tap(user => {
 
         console.log(user);
@@ -52,11 +52,8 @@ export class LoginComponent implements OnInit {
 
     ).subscribe(
       (noop),
-      (err) => {
-
-      }
+      (err) => {}
     );
-
   }
 
 }
